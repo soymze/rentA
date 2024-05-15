@@ -1,40 +1,139 @@
-@font-face {
-    font-family: 'Adamina-Regular';
-    src: url('../assets/fonts/AndadaPro-Bold.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+#logo{
+  height: 80px;
+  width: 80px;
+margin-left: 20px;
 }
 
-#myVideo {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-  }
-  
-  /* Add some content at the bottom of the video/page */
-  .content {
-    position: fixed;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    color: #f1f1f1;
-    width: 100%;
-    padding: 20px;
-  }
-  
-  /* Style the button used to pause/play the video */
-  #myBtn {
-    width: 200px;
-    font-size: 18px;
-    padding: 10px;
-    border: none;
-    background: #000;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  #myBtn:hover {
-    background: #ddd;
-    color: black;
-  } 
+.nav-item{
+  margin-left: 50px;
+  font-weight: bold;
+}
+
+.buttons{
+margin-left: 500px;
+}
+
+.btn{
+  background-color:#240750;
+  border-radius: none;
+  line-height: 43px;
+  border: #240750;
+  transition: all 0.3s;
+position: relative;
+}
+
+.btn span {
+transition: all 0.3s;
+font-family: 'AndadaPro-Bold';
+}
+
+.btn::before {
+content: '';
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 1;
+opacity: 0;
+transition: all 0.3s;
+border-top-width: 1px;
+border-bottom-width: 1px;
+border-top-style: solid;
+border-bottom-style: solid;
+border-top-color: #57A6A1;
+border-bottom-color: #57A6A1;
+transform: scale(0.1, 1);
+}
+
+.btn:hover span {
+letter-spacing: 1px;
+}
+
+.btn:hover::before {
+opacity: 1;	
+transform: scale(1, 1);
+}
+
+.btn::after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 1;
+transition: all 0.3s;
+}
+
+.btn:hover::after {
+opacity: 0;	
+transform: scale(0.1, 1);
+}
+
+a{
+  text-decoration: none;
+}
+
+a{
+  line-height: 10px;
+  transition: all 0.3s;
+position: relative;
+}
+
+a span {
+transition: all 0.3s;
+font-family: 'AndadaPro-Bold';
+}
+
+a::before {
+content: '';
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 1;
+opacity: 0;
+transition: all 0.3s;
+border-top-width: 1px;
+border-bottom-width: 1px;
+border-top-style: solid;
+border-bottom-style: solid;
+border-top-color: #57A6A1;
+border-bottom-color: #57A6A1;
+transform: scale(0.1, 1);
+}
+
+a:hover span {
+letter-spacing: 1px;
+}
+
+a:hover::before {
+opacity: 1;	
+transform: scale(1, 1);
+}
+
+a::after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 1;
+transition: all 0.3s;
+}
+
+a:hover::after {
+opacity: 0;	
+transform: scale(0.1, 1);
+}
+
+hr{
+  border-top: 5px solid #57A6A1;
+}
+
+p{
+font-family: 'AndadaPro-Bold';
+}
