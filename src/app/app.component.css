@@ -86,7 +86,7 @@ transition: all 0.3s;
 font-family: 'AndadaPro-Bold';
 }
 
-a::before {
+a.text-white::before {
 content: '';
 position: absolute;
 bottom: 0;
