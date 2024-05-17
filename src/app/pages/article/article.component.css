@@ -95,6 +95,10 @@ h2{
 }
 
 hr{
-  border-top: 10px solid #57A6A1;
+  border-top: 20px solid #57A6A1;
   width: 1500;
+}
+
+h2{
+  background-color: rgb(87, 166, 161, 0.3);
 }

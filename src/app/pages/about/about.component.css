@@ -112,3 +112,8 @@ figure.snip0045 {
   .red{
     box-shadow: 10px 10px 5px rgb(88, 94, 96);
   }
+
+  hr{
+    border-top: 20px solid #57A6A1;
+    width: 1500;
+  }
