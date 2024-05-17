@@ -1,0 +1,46 @@
+h1 {
+    font-family: 'Untitled Serif';
+    font-size: 80px;
+    line-height: 78px;
+    font-weight: 200;
+    margin-left: 40%;
+}
+
+hr{
+    border-top: 20px solid #57A6A1;
+    width: 100%;
+}
+
+h2 {
+    font-family: 'Untitled Serif';
+    max-width: 20%;
+    font-size: 20px;
+    line-height: 20px;
+    background-color: #240750;
+    color: white;
+    margin-left: 10px;
+    padding-top: 1%;
+    margin: auto;
+}
+
+p {
+    font-family: 'Untitled Sans';
+    font-size: 19px;
+    font-weight: 400;
+    letter-spacing: -0.20px;
+    background-color: white;
+    margin-left: 5%;
+ }
+
+main{
+    background-color: rgb(87, 166, 161, 0.3);
+}
+
+.filler{
+    background-color: rgb(87, 166, 161, 0.3);
+    min-width: 40%;
+}
+
+.bg{
+    background-color: white;
+}
