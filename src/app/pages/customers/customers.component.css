@@ -17,3 +17,8 @@
   border-left: 8px solid #240750;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
+
+hr{
+  border-top: 20px solid #57A6A1;
+  width: 1500;
+}

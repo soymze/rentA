@@ -161,5 +161,10 @@
     margin: 60px;
   }
 
+  hr{
+    border-top: 20px solid #57A6A1;
+    width: 100%;
+  }
+
 
   

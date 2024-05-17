@@ -1,12 +1,10 @@
 body {
-    font-family: "Roboto", sans-serif;
     background-color: #fff;
     line-height: 1.9;
     color: #8c8c8c; }
   
   h1, h2, h3, h4, h5, h6,
   .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: "Roboto", sans-serif;
     color: #000; }
   
   a {
@@ -19,8 +17,6 @@ body {
   .text-black {
     color: #000; }
   
-  .content {
-    padding: 7rem 0; }
   
   .heading {
     font-size: 2.5rem;
@@ -56,7 +52,8 @@ body {
       color: #fff;
       padding: 15px 20px; }
     .btn:hover {
-      color: #fff; }
+      color: #6c63ff;
+      background: #fff; }
     .btn:active, .btn:focus {
       outline: none;
       -webkit-box-shadow: none;
@@ -98,3 +95,13 @@ body {
     font-weight: bold;
     font-size: 12px;
     color: #000; }
+
+    hr{
+      border-top: 20px solid #57A6A1;
+      width: 100%;
+    }
+
+    #contactForm{
+      margin-top: 100px;
+    }
+
