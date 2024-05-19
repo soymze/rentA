@@ -9,4 +9,17 @@ import { Component } from '@angular/core';
 })
 export class SignupComponent {
 
+  onSignUpClick() {
+    const container = document.getElementById('container');
+    if (container) {
+      container.classList.add('right-panel-active');
+    }
+  }
+
+  onSignInClick() {
+    const container = document.getElementById('container');
+    if (container) {
+      container.classList.remove('right-panel-active');
+    }
+  }
 }
