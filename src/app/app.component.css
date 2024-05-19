@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 #logo{
   height: 80px;
   width: 80px;
@@ -7,6 +10,7 @@ margin-left: 20px;
 .nav-item{
   margin-left: 50px;
   font-weight: bold;
+  font-family: 'Poppins';
 }
 
 .buttons{
@@ -16,15 +20,16 @@ margin-left: 500px;
 .btn{
   background-color:#240750;
   border-radius: none;
-  line-height: 43px;
+  line-height: 15px;
   border: #240750;
   transition: all 0.3s;
   position: relative;
+  font-family: 'Poppins';
 }
 
 .btn span {
 transition: all 0.3s;
-font-family: 'AndadaPro-Bold';
+font-family: 'Poppins';
 }
 
 .btn::before {
@@ -83,7 +88,7 @@ position: relative;
 
 a span {
 transition: all 0.3s;
-font-family: 'AndadaPro-Bold';
+font-family: 'Poppins';
 }
 
 a.text-white::before {
@@ -137,7 +142,7 @@ hr{
 }
 
 p{
-font-family: 'AndadaPro-Bold';
+font-family: 'Roboto';
 }
 
 footer{

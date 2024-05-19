@@ -1,5 +1,4 @@
-import { Routes, RouterModule } from '@angular/router';
-import { NgModule } from '@angular/core';
+import { Routes} from '@angular/router';
 import { AboutComponent } from './pages/about/about.component';
 import { CarsComponent } from './pages/cars/cars.component';
 import { ContactComponent } from './pages/contact/contact.component';
@@ -13,10 +12,16 @@ import { SigninComponent } from './pages/signin/signin.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { TermsComponent } from './pages/terms/terms.component';
 import { ArticleComponent } from './pages/article/article.component';
-import { CommonModule } from '@angular/common';
+
 
 export const routes: Routes = [
     {path: '', component: ArticleComponent},
+    {path: '', children:[
+        {path: 'detail1', component: Detail1Component},
+        {path: 'detail2', component: Detail2Component},
+        {path: 'detail3', component: Detail3Component},
+    ]
+},
     {path: 'about', component: AboutComponent},
     {path: 'cars', component: CarsComponent},
     {path: 'contact', component: ContactComponent},
@@ -28,7 +33,10 @@ export const routes: Routes = [
     {path: 'personaldata', component: PersonaldataComponent},
     {path: 'signin', component: SigninComponent},
     {path: 'signup', component: SignupComponent},
-    {path: 'terms', component: TermsComponent}
+    {path: 'terms', component: TermsComponent},
+    {path: 'detail1', component: Detail1Component},
+    {path: 'detail2', component: Detail2Component},
+    {path: 'detail3', component: Detail3Component}
 ];
 
 
