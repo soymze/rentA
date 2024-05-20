@@ -57,8 +57,8 @@ a {
 
 button {
   border-radius: 20px;
-  border: 1px solid #ff4b2b;
-  background-color: #ff4b2b;
+  border: 1px solid #ffffff;
+  background-color: #ffffff;
   color: #ffffff;
   font-size: 12px;
   font-weight: bold;
@@ -237,4 +237,8 @@ input {
   -webkit-box-shadow: none;
   box-shadow: none;
   color: #eee;
+}
+
+.signin{
+	background: #6fcdc7;
 }
