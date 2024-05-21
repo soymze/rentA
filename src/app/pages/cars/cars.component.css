@@ -6,9 +6,14 @@
   font-family: 'Roboto';
 }
 
-.tarih{
+.datepicker{
     margin: 25px;
-    margin-left: 650px;
+    margin-left: 35%;
+    padding-top: 2%;
+    border: 5px solid rgb(87, 166, 161, 0.3);
+    border-bottom: none;
+    border-right: none;
+    border-top-style: dashed;
 }
 
 .btn {
@@ -185,6 +190,11 @@
 
   label{
     font-family: 'Poppins';
+  }
+
+  .btn-outline-secondary{
+    background: #6c63ff;
+    color: #fff;
   }
 
 
