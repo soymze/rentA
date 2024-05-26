@@ -63,17 +63,6 @@ figure.snip0045 {
     font-family: 'Roboto';
   }
 
-  figure.snip0045 figcaption .icons {
-    width: 100%;
-    text-align: right;
-  }
-
-  figure.snip0045 figcaption .icons i {
-    font-size: 26px;
-    padding: 5px;
-    top: 50%;
-    color: #000000;
-  }
 
   figure.snip0045 figcaption a {
     opacity: 0.3;

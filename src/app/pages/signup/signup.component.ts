@@ -1,9 +1,11 @@
+import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [],
+  imports: [FormsModule, HttpClientModule],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.css'
 })
@@ -21,5 +23,9 @@ export class SignupComponent {
     if (container) {
       container.classList.remove('right-panel-active');
     }
+  }
+
+  onUserCreate(user: {userName: string, mail: string, Password: string}) {
+    console.log(user);
   }
 }
