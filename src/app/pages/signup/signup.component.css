@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
 
 hr {
@@ -27,7 +27,7 @@ body {
 h1 {
   font-weight: bold;
   margin: 0;
-  font-family: 'Oswald';
+  font-family: "Oswald";
 }
 
 h2 {
@@ -40,7 +40,7 @@ p {
   line-height: 20px;
   letter-spacing: 0.5px;
   margin: 20px 0 30px;
-  font-family: 'Roboto';
+  font-family: "Roboto";
 }
 
 span {
@@ -61,7 +61,7 @@ button {
   color: #ffffff;
   font-size: 12px;
   font-weight: bold;
-  font-family: 'Poppins';
+  font-family: "Poppins";
   padding: 12px 45px;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -175,8 +175,8 @@ input {
 
 .overlay {
   background: #ff416c;
-  background: -webkit-linear-gradient(to right, #57A6A1, #520897);
-  background: linear-gradient(to right, #57A6A1, #520897);
+  background: -webkit-linear-gradient(to right, #57a6a1, #520897);
+  background: linear-gradient(to right, #57a6a1, #520897);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;
@@ -239,6 +239,6 @@ input {
   margin-top: 30px;
 }
 
-.signin{
-	background: #6fcdc7;
+.signin {
+  background: #6fcdc7;
 }

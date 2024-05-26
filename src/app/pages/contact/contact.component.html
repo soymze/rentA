@@ -42,9 +42,20 @@
                     maxlength="40"
                     #senderName="ngModel"
                   />
-                  <div class="text-danger" *ngIf="senderName.invalid && (senderName.touched || senderName.dirty) || isFormSubmited">
-                    <span *ngIf="senderName.errors?.['required']">Lütfen bir kullanıcı adı girin.</span>
-                    <span *ngIf="senderName.errors?.['minlength']">Kullanıcı adı 3 ila 40 karakter arasında olmalıdır.</span>
+                  <div
+                    class="text-danger"
+                    *ngIf="
+                      (senderName.invalid &&
+                        (senderName.touched || senderName.dirty)) ||
+                      isFormSubmited
+                    "
+                  >
+                    <span *ngIf="senderName.errors?.['required']"
+                      >Lütfen bir kullanıcı adı girin.</span
+                    >
+                    <span *ngIf="senderName.errors?.['minlength']"
+                      >Kullanıcı adı 3 ila 40 karakter arasında olmalıdır.</span
+                    >
                   </div>
                 </div>
               </div>
@@ -61,9 +72,21 @@
                     pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
                     #senderMail="ngModel"
                   />
-                  <div class="text-danger" *ngIf="senderMail.invalid && (senderMail.touched || senderMail.dirty) || isFormSubmited">
-                    <span *ngIf="senderMail.errors?.['pattern']">Lütfen e-posta adresinizin geçerli bir formatta olduğundan emin olun.</span>
-                    <span *ngIf="senderMail.errors?.['required']">Lütfen e-posta adresinizi girin.</span>
+                  <div
+                    class="text-danger"
+                    *ngIf="
+                      (senderMail.invalid &&
+                        (senderMail.touched || senderMail.dirty)) ||
+                      isFormSubmited
+                    "
+                  >
+                    <span *ngIf="senderMail.errors?.['pattern']"
+                      >Lütfen e-posta adresinizin geçerli bir formatta
+                      olduğundan emin olun.</span
+                    >
+                    <span *ngIf="senderMail.errors?.['required']"
+                      >Lütfen e-posta adresinizi girin.</span
+                    >
                   </div>
                 </div>
               </div>
@@ -79,8 +102,16 @@
                     required
                     #subject="ngModel"
                   />
-                  <div class="text-danger" *ngIf="subject.invalid && (subject.touched || subject.dirty) || isFormSubmited">
-                    <span *ngIf="subject.errors?.['required']">Bu bilgi gerekli.</span>
+                  <div
+                    class="text-danger"
+                    *ngIf="
+                      (subject.invalid && (subject.touched || subject.dirty)) ||
+                      isFormSubmited
+                    "
+                  >
+                    <span *ngIf="subject.errors?.['required']"
+                      >Bu bilgi gerekli.</span
+                    >
                   </div>
                 </div>
               </div>
@@ -98,8 +129,16 @@
                     required
                     #message="ngModel"
                   ></textarea>
-                  <div class="text-danger" *ngIf="message.invalid && (message.touched || message.dirty) || isFormSubmited">
-                    <span *ngIf="message.errors?.['required']">Lütfen mesajınızı giriniz.</span>
+                  <div
+                    class="text-danger"
+                    *ngIf="
+                      (message.invalid && (message.touched || message.dirty)) ||
+                      isFormSubmited
+                    "
+                  >
+                    <span *ngIf="message.errors?.['required']"
+                      >Lütfen mesajınızı giriniz.</span
+                    >
                   </div>
                 </div>
               </div>

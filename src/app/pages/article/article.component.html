@@ -1,58 +1,91 @@
-
-	<ngb-carousel>
-		<ng-template ngbSlide auto slide>
-			<div class="picsum-img-wrapper">
-				<img src="../../../assets/karosel1.jpg" alt="Random first slide" />
-			</div>
-		</ng-template>
-		<ng-template ngbSlide>
-			<div class="picsum-img-wrapper">
-				<img src="../../../assets/karosel2.jpg" alt="Random second slide" />
-			</div>
-		</ng-template>
-		<ng-template ngbSlide>
-			<div class="picsum-img-wrapper">
-				<img src="../../../assets/karosel3.jpg" alt="Random third slide" />
-			</div>
-		</ng-template>
-	</ngb-carousel>
-
-
-
-  <hr>
-
-  <div class="card-group position-relative">
-    <div class="card">
-      <img class="card-img-top" src="../../../assets/kamp3.png" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title"n>THY Çalışanlarına İndirim</h5>
-        <button class="btn btn-primary position-absolute top-100 start-50 translate-middle" [routerLink]="['/detail1']" routerLinkActive="active" role="button"><span class="text">DETAYLAR</span></button>
-      </div>
+<ngb-carousel>
+  <ng-template ngbSlide auto slide>
+    <div class="picsum-img-wrapper">
+      <img src="../../../assets/karosel1.jpg" alt="Random first slide" />
     </div>
-    <div class="card">
-      <img class="card-img-top" src="../../../assets/kamp2.jpg" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Sonsuza Kadar Türkiye</h5>
-        <button class="btn btn-primary position-absolute top-100 start-50 translate-middle" [routerLink]="['/detail2']" role="button"><span class="text">DETAYLAR</span></button>
-      </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img src="../../../assets/karosel2.jpg" alt="Random second slide" />
     </div>
-    <div class="card">
-      <img class="card-img-top" src="../../../assets/kamp1.jpg" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Belediye Çalışanları Kampanyası</h5>
-        <button class="btn btn-primary position-absolute top-100 start-50 translate-middle" [routerLink]="['/detail3']" role="button"><span class="text">DETAYLAR</span></button>
-      </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img src="../../../assets/karosel3.jpg" alt="Random third slide" />
+    </div>
+  </ng-template>
+</ngb-carousel>
+
+<hr />
+
+<div class="card-group position-relative">
+  <div class="card">
+    <img
+      class="card-img-top"
+      src="../../../assets/kamp3.png"
+      alt="Card image cap"
+    />
+    <div class="card-body">
+      <h5 class="card-title" n>THY Çalışanlarına İndirim</h5>
+      <button
+        class="btn btn-primary position-absolute top-100 start-50 translate-middle"
+        [routerLink]="['/detail1']"
+        routerLinkActive="active"
+        role="button"
+      >
+        <span class="text">DETAYLAR</span>
+      </button>
     </div>
   </div>
-
-  <hr>
-
-  <div class="map">
-      <h2>KİRALAMA NOKTALARI</h2>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6342346.289604239!2d34.401718108163415!3d39.08714223088563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b0155c964f2671%3A0x40d9dbd42a625f2a!2zVMO8cmtpeWU!5e0!3m2!1str!2str!4v1715709846519!5m2!1str!2str" width="1500" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <div class="card">
+    <img
+      class="card-img-top"
+      src="../../../assets/kamp2.jpg"
+      alt="Card image cap"
+    />
+    <div class="card-body">
+      <h5 class="card-title">Sonsuza Kadar Türkiye</h5>
+      <button
+        class="btn btn-primary position-absolute top-100 start-50 translate-middle"
+        [routerLink]="['/detail2']"
+        role="button"
+      >
+        <span class="text">DETAYLAR</span>
+      </button>
+    </div>
   </div>
+  <div class="card">
+    <img
+      class="card-img-top"
+      src="../../../assets/kamp1.jpg"
+      alt="Card image cap"
+    />
+    <div class="card-body">
+      <h5 class="card-title">Belediye Çalışanları Kampanyası</h5>
+      <button
+        class="btn btn-primary position-absolute top-100 start-50 translate-middle"
+        [routerLink]="['/detail3']"
+        role="button"
+      >
+        <span class="text">DETAYLAR</span>
+      </button>
+    </div>
+  </div>
+</div>
 
-  <hr class="my-5" />
+<hr />
 
+<div class="map">
+  <h2>KİRALAMA NOKTALARI</h2>
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6342346.289604239!2d34.401718108163415!3d39.08714223088563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b0155c964f2671%3A0x40d9dbd42a625f2a!2zVMO8cmtpeWU!5e0!3m2!1str!2str!4v1715709846519!5m2!1str!2str"
+    width="1500"
+    height="600"
+    style="border: 0"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+  ></iframe>
+</div>
 
-
+<hr class="my-5" />

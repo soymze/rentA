@@ -1,80 +1,124 @@
-    
-<nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color: #240750">
+<nav
+  class="navbar sticky-top navbar-expand-lg navbar-dark"
+  style="background-color: #240750"
+>
   <a routerLink="/" routerLinkActive="active">
-    <img id="logo" src="../../../assets/a2.png" alt="rentA">
+    <img id="logo" src="../../../assets/a2.png" alt="rentA" />
   </a>
-  
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <button [routerLink]="['/']" routerLinkActive="active" type="button" class="btn btn-primary btn-lg">
-            <span>Anasayfa</span>
-          </button>
-        </li>
-        <li class="nav-item">
-          <button [routerLink]="['/cars']" routerLinkActive="active" type="button" class="btn btn-primary btn-lg">
-            <span>Arabalar</span>
-          </button>
-        </li>
-        <li class="nav-item">
-          <button [routerLink]="['/customers']" routerLinkActive="active" type="button" class="btn btn-primary btn-lg">
-            <span>Müşterilerimiz</span>
-          </button>
-        </li>
-        <li class="nav-item">
-            <button [routerLink]="['/contact']" routerLinkActive="active" type="button" class="btn btn-primary btn-lg">
-              <span>İletişim</span>
-            </button>
-          </li>
-      </ul>
-      <div class="buttons">
-        <button [routerLink]="['/signup']" routerLinkActive="active" type="button" class="btn btn-primary btn-sm m-2">
-          <span>Kaydol/Giriş Yap</span>
-        </button>
-      </div>
-    </div>
-  </nav>
-  
 
-    <router-outlet></router-outlet>
-    
-<footer class="text-center text-white" style="background-color: #240750">
-    <div class="container">
-      <section class="mt-5">
-        <div class="row text-center d-flex justify-content-center pt-5">
-          <div class="col-md-2">
-            <h6 class="text-uppercase font-weight-bold">
-              <a routerLink="/about" routerLinkActive="active" class="text-white"><span>Hakkımızda</span></a>
-            </h6>
-          </div>
-  
-          <div class="col-md-2">
-            <h6 class="text-uppercase font-weight-bold">
-              <a routerLink="/terms" routerLinkActive="active" class="text-white"><span>Araç Kiralama Koşulları</span></a>
-            </h6>
-          </div>
-  
-          <div class="col-md-2">
-            <h6 class="text-uppercase font-weight-bold">
-              <a routerLink="/personaldata" routerLinkActive="active" class="text-white"><span>KVKK Aydınlatma Metni</span></a>
-            </h6>
-          </div>
-  
-          <div class="col-md-2">
-            <h6 class="text-uppercase font-weight-bold">
-              <a routerLink="/cookies" routerLinkActive="active" class="text-white"><span>Çerez Politikası</span></a>
-            </h6>
-          </div>
-  
-          <div class="col-md-2">
-            <h6 class="text-uppercase font-weight-bold">
-              <a routerLink="/contact" routerLinkActive="active" class="text-white"><span>İletişim</span></a>
-            </h6>
-          </div>
-        </div>
-      </section>
-      <hr class="my-5" />
-      <p>© 2024 Tüm hakları saklıdır</p>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <button
+          [routerLink]="['/']"
+          routerLinkActive="active"
+          type="button"
+          class="btn btn-primary btn-lg"
+        >
+          <span>Anasayfa</span>
+        </button>
+      </li>
+      <li class="nav-item">
+        <button
+          [routerLink]="['/cars']"
+          routerLinkActive="active"
+          type="button"
+          class="btn btn-primary btn-lg"
+        >
+          <span>Arabalar</span>
+        </button>
+      </li>
+      <li class="nav-item">
+        <button
+          [routerLink]="['/customers']"
+          routerLinkActive="active"
+          type="button"
+          class="btn btn-primary btn-lg"
+        >
+          <span>Müşterilerimiz</span>
+        </button>
+      </li>
+      <li class="nav-item">
+        <button
+          [routerLink]="['/contact']"
+          routerLinkActive="active"
+          type="button"
+          class="btn btn-primary btn-lg"
+        >
+          <span>İletişim</span>
+        </button>
+      </li>
+    </ul>
+    <div class="buttons">
+      <button
+        [routerLink]="['/signup']"
+        routerLinkActive="active"
+        type="button"
+        class="btn btn-primary btn-sm m-2"
+      >
+        <span>Kaydol/Giriş Yap</span>
+      </button>
     </div>
-  </footer>
-  
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+
+<footer class="text-center text-white" style="background-color: #240750">
+  <div class="container">
+    <section class="mt-5">
+      <div class="row text-center d-flex justify-content-center pt-5">
+        <div class="col-md-2">
+          <h6 class="text-uppercase font-weight-bold">
+            <a routerLink="/about" routerLinkActive="active" class="text-white"
+              ><span>Hakkımızda</span></a
+            >
+          </h6>
+        </div>
+
+        <div class="col-md-2">
+          <h6 class="text-uppercase font-weight-bold">
+            <a routerLink="/terms" routerLinkActive="active" class="text-white"
+              ><span>Araç Kiralama Koşulları</span></a
+            >
+          </h6>
+        </div>
+
+        <div class="col-md-2">
+          <h6 class="text-uppercase font-weight-bold">
+            <a
+              routerLink="/personaldata"
+              routerLinkActive="active"
+              class="text-white"
+              ><span>KVKK Aydınlatma Metni</span></a
+            >
+          </h6>
+        </div>
+
+        <div class="col-md-2">
+          <h6 class="text-uppercase font-weight-bold">
+            <a
+              routerLink="/cookies"
+              routerLinkActive="active"
+              class="text-white"
+              ><span>Çerez Politikası</span></a
+            >
+          </h6>
+        </div>
+
+        <div class="col-md-2">
+          <h6 class="text-uppercase font-weight-bold">
+            <a
+              routerLink="/contact"
+              routerLinkActive="active"
+              class="text-white"
+              ><span>İletişim</span></a
+            >
+          </h6>
+        </div>
+      </div>
+    </section>
+    <hr class="my-5" />
+    <p>© 2024 Tüm hakları saklıdır</p>
+  </div>
+</footer>
