@@ -1,58 +1,128 @@
 <div class="content">
-    <hr>
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-10">
-          
+  <hr />
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <h3 class="heading mb-4">Hadi her şeyi konuşalım!</h3>
+            <p>
+              Yandaki iletişim formunu doldurarak bütün soru ve mesajlarınızı
+              bize iletebilirsiniz.
+            </p>
 
-          <div class="row justify-content-center">
-            <div class="col-md-6">
-              
-              <h3 class="heading mb-4">Hadi her şeyi konuşalım!</h3>
-              <p>Yandaki iletişim formunu doldurarak bütün soru ve mesajlarınızı bize iletebilirsiniz.</p>
-
-              <p><img src="../../../assets/formimg.svg" alt="Image" class="img-fluid"></p>
-
-
-            </div>
-            <div class="col-md-6">
-              
-              <form class="mb-5" method="post" id="contactForm" name="contactForm" #contactForm="ngForm" (ngSubmit)="onMessageCreate(contactForm.value)">
-                <div class="row">
-                  <div class="col-md-12 mb-3 form-group">
-                    <input type="text" class="form-control" name="senderName" id="senderName" placeholder="Adınız" ngModel>
+            <p>
+              <img
+                src="../../../assets/formimg.svg"
+                alt="Image"
+                class="img-fluid"
+              />
+            </p>
+          </div>
+          <div class="col-md-6">
+            <form
+              class="mb-5"
+              method="post"
+              id="contactForm"
+              name="contactForm"
+              #contactForm="ngForm"
+              (ngSubmit)="onMessageCreate(contactForm.value)"
+            >
+              <div class="row">
+                <div class="col-md-12 mb-3 form-group">
+                  <input
+                    type="text"
+                    [(ngModel)]="contactObj.senderName"
+                    name="senderName"
+                    id="senderName"
+                    placeholder="Adınız"
+                    ngModel
+                    required
+                    minlength="3"
+                    maxlength="40"
+                    #senderName="ngModel"
+                  />
+                  <div class="text-danger" *ngIf="senderName.invalid && (senderName.touched || senderName.dirty) || isFormSubmited">
+                    <span *ngIf="senderName.errors?.['required']">Lütfen bir kullanıcı adı girin.</span>
+                    <span *ngIf="senderName.errors?.['minlength']">Kullanıcı adı 3 ila 40 karakter arasında olmalıdır.</span>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-md-12 mb-3 form-group">
-                    <input type="text" class="form-control" name="senderMail" id="senderMail" placeholder="Email" ngModel>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12 mb-3 form-group">
-                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Konu" ngModel>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12 mb-3 form-group">
-                    <textarea class="form-control" name="message" id="message" cols="30" rows="7" placeholder="Mesajınız" ngModel></textarea>
-                  </div>
-                </div>  
-                <div class="row">
-                  <div class="col-12">
-                    <input type="submit" value="Gönder" class="btn btn-primary rounded-0 py-2 px-4">
-                  <span class="submitting"></span>
-                  </div>
-                </div>
-              </form>
-
-              <div id="form-message-warning mt-4"></div> 
-              <div id="form-message-success">
-                Your message was sent, thank you!
               </div>
+              <div class="row">
+                <div class="col-md-12 mb-3 form-group">
+                  <input
+                    type="mail"
+                    [(ngModel)]="contactObj.senderMail"
+                    name="senderMail"
+                    id="senderMail"
+                    placeholder="Email"
+                    ngModel
+                    required
+                    pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                    #senderMail="ngModel"
+                  />
+                  <div class="text-danger" *ngIf="senderMail.invalid && (senderMail.touched || senderMail.dirty) || isFormSubmited">
+                    <span *ngIf="senderMail.errors?.['pattern']">Lütfen e-posta adresinizin geçerli bir formatta olduğundan emin olun.</span>
+                    <span *ngIf="senderMail.errors?.['required']">Lütfen e-posta adresinizi girin.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 mb-3 form-group">
+                  <input
+                    type="text"
+                    [(ngModel)]="contactObj.subject"
+                    name="subject"
+                    id="subject"
+                    placeholder="Konu"
+                    ngModel
+                    required
+                    #subject="ngModel"
+                  />
+                  <div class="text-danger" *ngIf="subject.invalid && (subject.touched || subject.dirty) || isFormSubmited">
+                    <span *ngIf="subject.errors?.['required']">Bu bilgi gerekli.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 mb-3 form-group">
+                  <textarea
+                    class="form-control"
+                    [(ngModel)]="contactObj.message"
+                    name="message"
+                    id="message"
+                    cols="30"
+                    rows="7"
+                    placeholder="Mesajınız"
+                    ngModel
+                    required
+                    #message="ngModel"
+                  ></textarea>
+                  <div class="text-danger" *ngIf="message.invalid && (message.touched || message.dirty) || isFormSubmited">
+                    <span *ngIf="message.errors?.['required']">Lütfen mesajınızı giriniz.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <input
+                    type="submit"
+                    value="Gönder"
+                    class="btn btn-primary rounded-0 py-2 px-4"
+                  />
+                  <span class="submitting"></span>
+                </div>
+              </div>
+            </form>
+
+            <div id="form-message-warning mt-4"></div>
+            <div id="form-message-success">
+              Your message was sent, thank you!
             </div>
           </div>
         </div>
       </div>
     </div>
-    <hr>
+  </div>
+  <hr />
+</div>

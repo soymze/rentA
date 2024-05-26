@@ -1,37 +1,122 @@
-
-<hr>
+<hr />
 <div class="container" id="container">
-	<div class="form-container sign-up-container">
-		<form action="#" method="post" id="signupForm" name="signupForm" #signupForm="ngForm" (ngSubmit)="onUserCreate(signupForm.value)">
-			<h1>Hesap Oluştur</h1>
-			<input type="text" placeholder="İsim" name="userName" ngModel/>
-			<input type="email" placeholder="Email" name="mail" ngModel/>
-			<input type="password" placeholder="Şifre" name="password" ngModel/>
-			<button class="bgwhiteb">Kaydol</button>
-		</form>
-	</div>
-	<div class="form-container sign-in-container">
-		<form action="#">
-			<h1>Giriş Yap</h1>
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Şifre" />
-			<a href="#">Şifrenizi mi unuttunuz?</a>
-			<button class="bgwhiteb signin">Giriş Yap</button>
-		</form>
-	</div>
-	<div class="overlay-container">
-		<div class="overlay">
-			<div class="overlay-panel overlay-left">
-				<h1>Tekrardan Hoşgeldiniz!</h1>
-				<p>Bizimle bağlantıda kalmak için lütfen kişisel bilgilerinizle giriş yapın</p>
-				<button class="ghost" id="signIn" (click)="onSignInClick()">Giriş Yap</button>
-			</div>
-			<div class="overlay-panel overlay-right">
-				<h1>Merhaba!</h1>
-				<p>Kişisel bilgilerinizi girin ve bizimle yolculuğa başlayın</p>
-				<button class="ghost" id="signUp" (click)="onSignUpClick()">Kaydol</button>
-			</div>
-		</div>
-	</div>
+  <div class="form-container sign-up-container">
+    <form
+      action="#"
+      method="post"
+      id="signupForm"
+      name="signupForm"
+      #signupForm="ngForm"
+      (ngSubmit)="onUserCreate(signupForm.value)"
+    >
+      <h1>Hesap Oluştur</h1>
+      <input
+        type="text"
+        placeholder="Adınız"
+        name="userName"
+        id="userName"
+        ngModel
+        [(ngModel)]="userObj.userName"
+        required
+        minlength="3"
+        maxlength="30"
+        #userName="ngModel"
+      />
+      <div
+        class="text-danger"
+        *ngIf="
+          (userName.invalid && (userName.touched || userName.dirty)) ||
+          isUserCreated
+        "
+      >
+        <span *ngIf="userName.errors?.['required']"
+          >Lütfen bir kullanıcı adı girin.</span
+        >
+        <span *ngIf="userName.errors?.['minlength']"
+          >Kullanıcı adı 3 ila 30 karakter arasında olmalıdır.</span
+        >
+      </div>
+      <input
+        type="email"
+        placeholder="Mail"
+        name="mail"
+        [(ngModel)]="userObj.mail"
+        id="senderMail"
+        ngModel
+        required
+        pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+        #mail="ngModel"
+      />
+      <div
+        class="text-danger"
+        *ngIf="(mail.invalid && (mail.touched || mail.dirty)) || isUserCreated"
+      >
+        <span *ngIf="mail.errors?.['pattern']"
+          >Lütfen e-posta adresinizin geçerli bir formatta olduğundan emin
+          olun.</span
+        >
+        <span *ngIf="mail.errors?.['required']"
+          >Lütfen e-posta adresinizi girin.</span
+        >
+      </div>
+      <input
+        type="password"
+        placeholder="Şifre"
+        name="password"
+        ngModel
+        [(ngModel)]="userObj.password"
+        id="password"
+        required
+        #password="ngModel"
+      />
+      <div
+        class="text-danger"
+        *ngIf="
+          (password.invalid && (password.touched || password.dirty)) ||
+          isUserCreated
+        "
+      >
+        <span *ngIf="password.errors?.['required']"
+          >Lütfen şifrenizi girin.</span
+        >
+      </div>
+      <button class="bgwhiteb">Kaydol</button>
+    </form>
+  </div>
+  <div class="form-container sign-in-container">
+    <form action="#">
+      <h1>Giriş Yap</h1>
+      <input type="email" name="mail" id="mail" placeholder="Mail" />
+      <input
+        type="password"
+        placeholder="Şifre"
+        name="password"
+        id="password"
+      />
+      <a href="#">Şifrenizi mi unuttunuz?</a>
+      <button class="bgwhiteb signin">Giriş Yap</button>
+    </form>
+  </div>
+  <div class="overlay-container">
+    <div class="overlay">
+      <div class="overlay-panel overlay-left">
+        <h1>Tekrardan Hoşgeldiniz!</h1>
+        <p>
+          Bizimle bağlantıda kalmak için lütfen kişisel bilgilerinizle giriş
+          yapın
+        </p>
+        <button class="ghost" id="signIn" (click)="onSignInClick()">
+          Giriş Yap
+        </button>
+      </div>
+      <div class="overlay-panel overlay-right">
+        <h1>Merhaba!</h1>
+        <p>Kişisel bilgilerinizi girin ve bizimle yolculuğa başlayın</p>
+        <button class="ghost" id="signUp" (click)="onSignUpClick()">
+          Kaydol
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
-<hr>
+<hr />
