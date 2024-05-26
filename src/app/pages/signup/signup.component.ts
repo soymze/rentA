@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpHeaders , HttpClient} from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
@@ -10,6 +10,10 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './signup.component.css'
 })
 export class SignupComponent {
+
+  constructor(private http: HttpClient){
+
+  }
 
   onSignUpClick() {
     const container = document.getElementById('container');
@@ -25,7 +29,13 @@ export class SignupComponent {
     }
   }
 
-  onUserCreate(user: {userName: string, mail: string, Password: string}) {
+  onUserCreate(user: {userName: string, mail: string, password: string}) {
+    const header = new HttpHeaders({
+      contentType: 'application/json'
+    })
     console.log(user);
+    this.http.post('http://localhost:8080/api/users', user, {headers: header}).subscribe((res) => {
+      console.log(res);
+    });
   }
 }

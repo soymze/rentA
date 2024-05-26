@@ -2,11 +2,11 @@
 <hr>
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
-		<form action="#" #signupForm="ngForm" (ngSubmit)="onUserCreate(signupForm.value)">
+		<form action="#" method="post" id="signupForm" name="signupForm" #signupForm="ngForm" (ngSubmit)="onUserCreate(signupForm.value)">
 			<h1>Hesap Oluştur</h1>
 			<input type="text" placeholder="İsim" name="userName" ngModel/>
 			<input type="email" placeholder="Email" name="mail" ngModel/>
-			<input type="password" placeholder="Şifre" name="Password" ngModel/>
+			<input type="password" placeholder="Şifre" name="password" ngModel/>
 			<button class="bgwhiteb">Kaydol</button>
 		</form>
 	</div>

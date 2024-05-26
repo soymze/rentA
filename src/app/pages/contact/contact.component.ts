@@ -19,6 +19,7 @@ export class ContactComponent {
     const header = new HttpHeaders({
       contentType: 'application/json'
     })
+    console.log(data);
     this.http.post('http://localhost:8080/api/messages', data, {headers: header}).subscribe((res) => {
       console.log(res);
     });
