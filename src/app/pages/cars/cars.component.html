@@ -104,52 +104,33 @@
         </select>
       </div>
       <hr />
-      <div class="yil mt-3">
+      <div class="year mt-3">
         <p>Yıl</p>
         <input type="number" min="2000" max="2024" step="1" value="" />
       </div>
     </div>
 
+    
     <div class="cards col-md-10 d-flex flex-row">
-      <div class="card col-4" style="width: 18rem">
-        <img class="card-img-top" src="..." alt="Card image cap" />
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-          <a href="#" class="btn btn-primary p-3 d-flex justify-content-center"
-            >Kirala</a
-          >
+      @for(post of data; track post.id){
+        <div class="card col-4" style="width: 18rem">
+          <img class="card-img-top" [src]="post.img_url" alt="Card image cap" />
+          <div class="card-body">
+            <h5 class="card-title">{{post.brand +"  "+ post.model+"  "+ post.year}}</h5>
+            <p class="card-text d-inline-flex">
+              Fiyat : {{post.price}}
+            </p>
+            <div class="button-container">
+              <a href="#" class="btn btn-primary p-3 d-flex justify-content-center"
+              >Detay</a
+            >
+            <a href="#" class="btn btn-primary p-3 d-flex justify-content-center"
+              >Kirala</a
+            >
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="card col-4" style="width: 18rem">
-        <img class="card-img-top" src="..." alt="Card image cap" />
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-          <a href="#" class="btn btn-primary p-3 d-flex justify-content-center"
-            >Kirala</a
-          >
-        </div>
-      </div>
-      <div class="card col-4" style="width: 18rem">
-        <img class="card-img-top" src="..." alt="Card image cap" />
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-          <a href="#" class="btn btn-primary p-3 d-flex justify-content-center"
-            >Kirala</a
-          >
-        </div>
-      </div>
+      }
     </div>
   </div>
   <hr />

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import {
   NgbCalendar,
   NgbDate,
@@ -7,15 +7,42 @@ import {
 } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { JsonPipe } from '@angular/common';
+import { HttpClient, HttpClientModule, HttpParams } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-cars',
   standalone: true,
-  imports: [FormsModule, NgbDatepickerModule, JsonPipe],
+  imports: [FormsModule, NgbDatepickerModule, JsonPipe, HttpClientModule],
   templateUrl: './cars.component.html',
   styleUrl: './cars.component.css',
 })
-export class CarsComponent {
+export class CarsComponent implements OnInit{
+
+  httpClient = inject(HttpClient);
+  data: any = [];
+  ngOnInit(): void {
+    this.fetchData();
+  }
+
+  fetchData(){
+    let params = new HttpParams();
+    if (this.fromDate) {
+      params = params.set('startDate', this.formatter.format(this.fromDate));
+    }
+    if (this.toDate) {
+      params = params.set('endDate', this.formatter.format(this.toDate));
+    }
+
+
+    this.httpClient.get('http://localhost:8080/api/cars/getall',{params}).subscribe((data: any)=>{
+      console.log(data);
+      this.data = data;
+    })
+  }
+
+
+
   calendar = inject(NgbCalendar);
   formatter = inject(NgbDateParserFormatter);
 

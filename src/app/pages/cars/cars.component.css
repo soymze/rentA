@@ -4,6 +4,10 @@
 
 .card-text {
   font-family: "Roboto";
+  background: #6c63ff;
+  color: white;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 5px;
 }
 
 .datepicker {
@@ -178,10 +182,6 @@ hr {
   margin-left: 20px;
 }
 
-.card {
-  margin: 60px;
-}
-
 hr {
   border-top: 20px solid #57a6a1;
   width: 100%;
@@ -203,3 +203,38 @@ label {
   background: #6c63ff;
   color: #fff;
 }
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Kartları yatayda eşit olarak dağıt */
+}
+
+.card {
+  width: calc(30% - 10px); /* Kartların genişliği, marginları çıkararak hesaplanıyor */
+  margin: 10px;
+  margin-left: 20px;
+}
+
+/* Ekran boyutlarına göre kartların genişliklerini ayarla */
+@media screen and (max-width: 992px) {
+  .card {
+    width: calc(50% - 10px); /* Kartlar %50 genişlikte olacak */
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .card {
+    width: calc(100% - 10px); /* Kartlar %100 genişlikte olacak */
+  }
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.button-container button {
+  margin-right: 3px; /* Sağ taraftaki boşluk */
+}
+
