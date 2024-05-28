@@ -214,6 +214,7 @@ label {
   width: calc(30% - 10px); /* Kartların genişliği, marginları çıkararak hesaplanıyor */
   margin: 10px;
   margin-left: 20px;
+  margin-bottom: 10px;
 }
 
 /* Ekran boyutlarına göre kartların genişliklerini ayarla */
@@ -236,5 +237,24 @@ label {
 
 .button-container button {
   margin-right: 3px; /* Sağ taraftaki boşluk */
+  padding: 15px 20px;
 }
+
+.paginationControl{
+  margin-left: 40%;
+  background: rgb(87, 166, 161, 0.3);
+  color: black;
+  display:inline-block;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  align-items: center;
+  margin: auto;
+  padding-left: 40%;
+  margin-top: 10px;
+}
+
+
+
+
+
 

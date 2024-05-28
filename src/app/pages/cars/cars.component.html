@@ -112,7 +112,7 @@
 
     
     <div class="cards col-md-10 d-flex flex-row">
-      @for(post of data; track post.id){
+      @for(post of data | paginate: {itemsPerPage: 8, currentPage: p}; track post.id){
         <div class="card col-4" style="width: 18rem">
           <img class="card-img-top" [src]="post.img_url" alt="Card image cap" />
           <div class="card-body">
@@ -131,6 +131,9 @@
           </div>
         </div>
       }
+    </div>
+    <div class="paginationControl">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
     </div>
   </div>
   <hr />

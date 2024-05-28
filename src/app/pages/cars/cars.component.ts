@@ -8,12 +8,13 @@ import {
 import { FormsModule } from '@angular/forms';
 import { JsonPipe } from '@angular/common';
 import { HttpClient, HttpClientModule, HttpParams } from '@angular/common/http';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @Component({
   selector: 'app-cars',
   standalone: true,
-  imports: [FormsModule, NgbDatepickerModule, JsonPipe, HttpClientModule],
+  imports: [FormsModule, NgbDatepickerModule, JsonPipe, HttpClientModule, NgxPaginationModule],
   templateUrl: './cars.component.html',
   styleUrl: './cars.component.css',
 })
@@ -21,6 +22,8 @@ export class CarsComponent implements OnInit{
 
   httpClient = inject(HttpClient);
   data: any = [];
+  p: number =1;
+  totalProduct:any;
   ngOnInit(): void {
     this.fetchData();
   }
@@ -38,6 +41,7 @@ export class CarsComponent implements OnInit{
     this.httpClient.get('http://localhost:8080/api/cars/getall',{params}).subscribe((data: any)=>{
       console.log(data);
       this.data = data;
+      this.totalProduct = data.length;
     })
   }
 
