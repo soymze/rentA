@@ -57,6 +57,13 @@
         [value]="formatter.format(toDate)"
         (input)="toDate = validateInput(toDate, dpToDate.value)"
       />
+      <button
+      class="btn btn-outline-secondary"
+      (click)="datepicker.toggle()"
+      type="button"
+    >
+      Ara
+    </button>
     </div>
   </div>
 </form>
@@ -66,48 +73,40 @@
 <div class="container-fluid">
   <div class="row">
     <div class="filter col-md-2">
-      <div class="kasa">
-        <p class="mt-4">KASA</p>
-        <div class="checkbox-wrapper-13">
-          <input id="c1-13" type="checkbox" />
-          <label for="c1-13">Sedan</label>
-        </div>
-        <div class="checkbox-wrapper-13">
-          <input id="c1-13" type="checkbox" />
-          <label for="c1-13">Coupe</label>
-        </div>
-        <div class="checkbox-wrapper-13">
-          <input id="c1-13" type="checkbox" />
-          <label for="c1-13">Truck</label>
-        </div>
-        <div class="checkbox-wrapper-13">
-          <input id="c1-13" type="checkbox" />
-          <label for="c1-13">Hatchback</label>
-        </div>
+      <div class="brand">
+        <p class="mt-4">Marka</p>
+        <select name="brands" id="brands">
+          <option value="default" selected></option>
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="audi">Audi</option>
+        </select>
       </div>
       <hr />
-      <div class="yakit">
-        <p>YAKIT</p>
-        <div class="checkbox-wrapper-13">
-          <input id="c1-13" type="checkbox" />
-          <label for="c1-13">Dizel</label>
-        </div>
-        <div class="checkbox-wrapper-13">
-          <input id="c1-13" type="checkbox" />
-          <label for="c1-13">Benzin</label>
-        </div>
+      <div class="type">
+        <p>Kasa</p>
+        <select name="types" id="types">
+          <option value="default" selected></option>
+          <option value="hatchback">Hatchback</option>
+          <option value="sedan">Sedan</option>
+          <option value="coupe">Coupe</option>
+          <option value="SUV">SUV</option>
+        </select>
       </div>
       <hr />
-      <div class="vites mt-3">
-        <p>VİTES</p>
-        <div class="checkbox-wrapper-13">
-          <input id="c1-13" type="checkbox" />
-          <label for="c1-13">Otomatik</label>
-        </div>
-        <div class="checkbox-wrapper-13">
-          <input id="c1-13" type="checkbox" />
-          <label for="c1-13">Manuel</label>
-        </div>
+      <div class="fuel">
+        <p>Yakıt</p>
+        <select name="fuelTypes" id="fuelTypes">
+          <option value="default" selected></option>
+          <option value="diesel">Dizel</option>
+          <option value="benzin">Benzin</option>
+        </select>
+      </div>
+      <hr />
+      <div class="yil mt-3">
+        <p>Yıl</p>
+        <input type="number" min="2000" max="2024" step="1" value="" />
       </div>
     </div>
 
