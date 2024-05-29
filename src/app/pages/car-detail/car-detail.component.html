@@ -1,0 +1,23 @@
+<div class="container row">
+  <h2>{{ carDetail.brand }}  <span class="model">{{ carDetail.model }}</span></h2>
+  <hr />
+  <div class="text col-md-9 mt-5">
+    <p class="text">
+      "{{ carDetail.brand }} {{ carDetail.model }}, {{ carDetail.year }} model
+      yılında üretilen bir arabadır. Bu araç, {{ carDetail.fuel }} yakıt
+      türüyle çalışır ve şık tasarımıyla dikkat çeker. Geniş iç mekanı ve modern
+      özellikleriyle konforlu bir sürüş deneyimi sunar. Ayrıca, Renta'nın
+      avantajlı günlük kiralama fiyatlarıyla {{ carDetail.brand }}
+      {{ carDetail.model }}'i deneyimlemek artık çok daha kolay. Şimdi
+      rezervasyon yapın ve bu muhteşem sürüş deneyimini keşfedin!"
+    </p>
+    <hr />
+  </div>
+  <div class="image-container col-md-2">
+    <img
+      *ngIf="carDetail?.img_url"
+      [src]="carDetail.img_url"
+      alt="Araba Resmi"
+    />
+  </div>
+</div>

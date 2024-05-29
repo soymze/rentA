@@ -9,26 +9,38 @@ import { FormsModule } from '@angular/forms';
 import { JsonPipe } from '@angular/common';
 import { HttpClient, HttpClientModule, HttpParams } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
-
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-cars',
   standalone: true,
-  imports: [FormsModule, NgbDatepickerModule, JsonPipe, HttpClientModule, NgxPaginationModule],
+  imports: [
+    FormsModule,
+    NgbDatepickerModule,
+    JsonPipe,
+    HttpClientModule,
+    NgxPaginationModule,
+    RouterModule
+  ],
   templateUrl: './cars.component.html',
   styleUrl: './cars.component.css',
 })
-export class CarsComponent implements OnInit{
-
+export class CarsComponent implements OnInit {
+  type: string = '';
+  fuel: string = '';
+  brand: string = '';
+  year: number = 2000;
   httpClient = inject(HttpClient);
   data: any = [];
-  p: number =1;
-  totalProduct:any;
+  p: number = 1;
+  totalProduct: any;
+
+
   ngOnInit(): void {
     this.fetchData();
   }
 
-  fetchData(){
+  fetchData() {
     let params = new HttpParams();
     if (this.fromDate) {
       params = params.set('startDate', this.formatter.format(this.fromDate));
@@ -36,16 +48,31 @@ export class CarsComponent implements OnInit{
     if (this.toDate) {
       params = params.set('endDate', this.formatter.format(this.toDate));
     }
+    if (this.brand && this.brand !== 'default') {
+      params = params.set('brand', this.brand);
+    }
+    if (this.type && this.type !== 'default') {
+      params = params.set('type', this.type);
+    }
+    if (this.fuel && this.fuel !== 'default') {
+      params = params.set('fuel', this.fuel);
+    }
+    if (this.year && this.year !== 2000) {
+      params = params.set('year', this.year.toString());
+    }
 
-
-    this.httpClient.get('http://localhost:8080/api/cars/getall',{params}).subscribe((data: any)=>{
-      console.log(data);
-      this.data = data;
-      this.totalProduct = data.length;
-    })
+    this.httpClient
+      .get('http://localhost:8080/api/cars/getall', { params })
+      .subscribe((data: any) => {
+        this.data = data;
+        this.totalProduct = data.length;
+      });
   }
 
-
+  onFilterChange() {
+    console.log("Filters changed");
+    this.fetchData();
+  }
 
   calendar = inject(NgbCalendar);
   formatter = inject(NgbDateParserFormatter);

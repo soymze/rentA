@@ -57,13 +57,6 @@
         [value]="formatter.format(toDate)"
         (input)="toDate = validateInput(toDate, dpToDate.value)"
       />
-      <button
-      class="btn btn-outline-secondary"
-      (click)="datepicker.toggle()"
-      type="button"
-    >
-      Ara
-    </button>
     </div>
   </div>
 </form>
@@ -75,39 +68,40 @@
     <div class="filter col-md-2">
       <div class="brand">
         <p class="mt-4">Marka</p>
-        <select name="brands" id="brands">
-          <option value="default" selected></option>
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="mercedes">Mercedes</option>
-          <option value="audi">Audi</option>
+        <select name="brand" class="select" id="brands" [(ngModel)]="brand" (ngModelChange)="onFilterChange()">
+          <option value="default" selected>Seçiniz</option>
+          <option value="Volvo">Volvo</option>
+          <option value="Saab">Saab</option>
+          <option value="Mercedes">Mercedes</option>
+          <option value="Audi">Audi</option>
         </select>
       </div>
       <hr />
       <div class="type">
         <p>Kasa</p>
-        <select name="types" id="types">
-          <option value="default" selected></option>
-          <option value="hatchback">Hatchback</option>
-          <option value="sedan">Sedan</option>
-          <option value="coupe">Coupe</option>
+        <select name="type" class="select" id="types" [(ngModel)]="type" (ngModelChange)="onFilterChange()">
+          <option value="default" selected>Seçiniz</option>
+          <option value="Hatchback">Hatchback</option>
+          <option value="Sedan">Sedan</option>
+          <option value="Coupe">Coupe</option>
           <option value="SUV">SUV</option>
         </select>
       </div>
       <hr />
       <div class="fuel">
         <p>Yakıt</p>
-        <select name="fuelTypes" id="fuelTypes">
-          <option value="default" selected></option>
-          <option value="diesel">Dizel</option>
-          <option value="benzin">Benzin</option>
+        <select name="selectedFuel" class="select" id="fuelTypes" [(ngModel)]="fuel" (ngModelChange)="onFilterChange()">
+          <option value="default" selected>Seçiniz</option>
+          <option value="Dizel">Dizel</option>
+          <option value="Benzin">Benzin</option>
         </select>
       </div>
       <hr />
       <div class="year mt-3">
         <p>Yıl</p>
-        <input type="number" min="2000" max="2024" step="1" value="" />
+        <input type="number" class="select" min="2000" max="2024" step="1" value="" [(ngModel)]="year" (ngModelChange)="onFilterChange()" />
       </div>
+      <hr />
     </div>
 
     
@@ -118,10 +112,11 @@
           <div class="card-body">
             <h5 class="card-title">{{post.brand +"  "+ post.model+"  "+ post.year}}</h5>
             <p class="card-text d-inline-flex">
-              Fiyat : {{post.price}}
+              Günlük Fiyat : {{post.price}}
             </p>
             <div class="button-container">
-              <a href="#" class="btn btn-primary p-3 d-flex justify-content-center"
+              <a [routerLink]="['/carDetail', post.id]"
+              routerLinkActive="active" class="btn btn-primary p-3 d-flex justify-content-center"
               >Detay</a
             >
             <a href="#" class="btn btn-primary p-3 d-flex justify-content-center"

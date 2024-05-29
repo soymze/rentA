@@ -11,6 +11,7 @@ import { PersonaldataComponent } from './pages/personaldata/personaldata.compone
 import { SignupComponent } from './pages/signup/signup.component';
 import { TermsComponent } from './pages/terms/terms.component';
 import { ArticleComponent } from './pages/article/article.component';
+import { CarDetailComponent } from './pages/car-detail/car-detail.component';
 
 export const routes: Routes = [
   { path: '', component: ArticleComponent },
@@ -24,6 +25,12 @@ export const routes: Routes = [
   },
   { path: 'about', component: AboutComponent },
   { path: 'cars', component: CarsComponent },
+  {
+    path: '',
+    children: [
+      { path: 'carDetail/:id', component: CarDetailComponent },
+    ],
+  },
   { path: 'contact', component: ContactComponent },
   { path: 'cookies', component: CookiesComponent },
   { path: 'customers', component: CustomersComponent },
