@@ -1,3 +1,14 @@
+<div class="reservation-messages">
+  <ngb-alert #successAlert [type]="'success'" [dismissible]="false" *ngIf="reservationSuccess">
+    Arabanız başarıyla rezerve edildi!
+  </ngb-alert>
+
+  <ngb-alert #errorAlert [type]="'danger'" [dismissible]="false" *ngIf="reservationError">
+    Bir hata oluştu. Lütfen tekrar deneyin.
+  </ngb-alert>
+</div>
+
+
 <div class="container row">
   <h2>{{ carDetail.brand }}  <span class="model">{{ carDetail.model }}</span></h2>
   <hr />
@@ -11,6 +22,7 @@
       {{ carDetail.model }}'i deneyimlemek artık çok daha kolay. Şimdi
       rezervasyon yapın ve bu muhteşem sürüş deneyimini keşfedin!"
     </p>
+    <button class="btn" (click)="onReserveClick()">Şimdi Rezerve Et</button>
     <hr />
   </div>
   <div class="image-container col-md-2">

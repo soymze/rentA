@@ -46,7 +46,7 @@ export class SignupComponent {
     });
     console.log(user);
     this.http
-      .post('http://localhost:8080/api/users', user, { headers: header })
+      .post('http://localhost:8080/users/process_register', user, { headers: header })
       .subscribe((res) => {
         console.log(res);
       });

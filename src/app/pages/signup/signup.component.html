@@ -8,6 +8,8 @@
       name="signupForm"
       #signupForm="ngForm"
       (ngSubmit)="onUserCreate(signupForm.value)"
+      th:action="@{/process_register}" th:object="${user}"
+            method="post"
     >
       <h1>Hesap Oluştur</h1>
       <input
@@ -21,6 +23,7 @@
         minlength="3"
         maxlength="30"
         #userName="ngModel"
+        th:field="*{username}"
       />
       <div
         class="text-danger"
@@ -46,6 +49,7 @@
         required
         pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
         #mail="ngModel"
+        th:field="*{mail}"
       />
       <div
         class="text-danger"
@@ -68,6 +72,7 @@
         id="password"
         required
         #password="ngModel"
+        th:field="*{password}"
       />
       <div
         class="text-danger"

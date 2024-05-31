@@ -72,5 +72,6 @@ h2 {
 }
 
 iframe {
-  margin-left: 5rem;
+  margin-left: 10vw;
+  border-radius: 15px;
 }

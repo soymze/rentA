@@ -1,27 +1,23 @@
 import { Component, OnInit, inject } from '@angular/core';
-import {
-  NgbCalendar,
-  NgbDate,
-  NgbDateParserFormatter,
-  NgbDatepickerModule,
-} from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
-import { JsonPipe } from '@angular/common';
+import { JsonPipe, DatePipe } from '@angular/common';
 import { HttpClient, HttpClientModule, HttpParams } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { RouterModule } from '@angular/router';
+import { ReservationService } from '../../services/reservation.service';
 
 @Component({
   selector: 'app-cars',
   standalone: true,
   imports: [
     FormsModule,
-    NgbDatepickerModule,
     JsonPipe,
     HttpClientModule,
     NgxPaginationModule,
-    RouterModule
+    RouterModule,
+    DatePipe
   ],
+  providers: [DatePipe], 
   templateUrl: './cars.component.html',
   styleUrl: './cars.component.css',
 })
@@ -35,18 +31,29 @@ export class CarsComponent implements OnInit {
   p: number = 1;
   totalProduct: any;
 
+  fromDate: string = '';
+  toDate: string = ''; 
+  constructor(private reservationService: ReservationService,
+    private datePipe: DatePipe
+  ) {}
 
   ngOnInit(): void {
+  const today = new Date();
+  const tenDaysLater = new Date();
+  tenDaysLater.setDate(today.getDate() + 10);
+
+  this.fromDate = this.datePipe.transform(today, 'yyyy-MM-dd') || '';
+  this.toDate = this.datePipe.transform(tenDaysLater, 'yyyy-MM-dd') || '';
     this.fetchData();
   }
 
   fetchData() {
     let params = new HttpParams();
     if (this.fromDate) {
-      params = params.set('startDate', this.formatter.format(this.fromDate));
+      params = params.set('startDate', this.fromDate);
     }
     if (this.toDate) {
-      params = params.set('endDate', this.formatter.format(this.toDate));
+      params = params.set('endDate', this.toDate);
     }
     if (this.brand && this.brand !== 'default') {
       params = params.set('brand', this.brand);
@@ -67,67 +74,12 @@ export class CarsComponent implements OnInit {
         this.data = data;
         this.totalProduct = data.length;
       });
+      this.reservationService.setFromDate(this.fromDate ? new Date(this.fromDate) : null);
+    this.reservationService.setToDate(this.toDate ? new Date(this.toDate) : null); 
   }
 
   onFilterChange() {
     console.log("Filters changed");
     this.fetchData();
-  }
-
-  calendar = inject(NgbCalendar);
-  formatter = inject(NgbDateParserFormatter);
-
-  hoveredDate: NgbDate | null = null;
-  fromDate: NgbDate | null = this.calendar.getToday();
-  toDate: NgbDate | null = this.calendar.getNext(
-    this.calendar.getToday(),
-    'd',
-    10
-  );
-
-  onDateSelection(date: NgbDate) {
-    if (!this.fromDate && !this.toDate) {
-      this.fromDate = date;
-    } else if (
-      this.fromDate &&
-      !this.toDate &&
-      date &&
-      date.after(this.fromDate)
-    ) {
-      this.toDate = date;
-    } else {
-      this.toDate = null;
-      this.fromDate = date;
-    }
-  }
-
-  isHovered(date: NgbDate) {
-    return (
-      this.fromDate &&
-      !this.toDate &&
-      this.hoveredDate &&
-      date.after(this.fromDate) &&
-      date.before(this.hoveredDate)
-    );
-  }
-
-  isInside(date: NgbDate) {
-    return this.toDate && date.after(this.fromDate) && date.before(this.toDate);
-  }
-
-  isRange(date: NgbDate) {
-    return (
-      date.equals(this.fromDate) ||
-      (this.toDate && date.equals(this.toDate)) ||
-      this.isInside(date) ||
-      this.isHovered(date)
-    );
-  }
-
-  validateInput(currentValue: NgbDate | null, input: string): NgbDate | null {
-    const parsed = this.formatter.parse(input);
-    return parsed && this.calendar.isValid(NgbDate.from(parsed))
-      ? NgbDate.from(parsed)
-      : currentValue;
   }
 }
